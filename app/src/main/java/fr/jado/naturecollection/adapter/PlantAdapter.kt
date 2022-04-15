@@ -1,7 +1,6 @@
 package fr.jado.naturecollection.adapter
 
 import android.net.Uri
-import android.view.AttachedSurfaceControl
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.jado.naturecollection.MainActivity
 import fr.jado.naturecollection.PlantModel
+import fr.jado.naturecollection.PlantRepository
 import fr.jado.naturecollection.R
 
 class PlantAdapter(
@@ -39,6 +39,9 @@ class PlantAdapter(
 // récupérer les informations de la plante
         val currentPlant = plantList[position]
 
+        //reccuperer le repository
+        val repo = PlantRepository()
+
         // utiliser glide pour récupérer l'image ) partir de son lien -> composant
         Glide.with(context).load(Uri.parse(currentPlant.imageUrl)).into(holder.plantImage)
 
@@ -54,6 +57,14 @@ class PlantAdapter(
         }
         else{
             holder.starIcon.setImageResource(R.drawable.ic_unstar)
+        }
+
+        // rajouter une interaction sur étoile
+        holder.starIcon.setOnClickListener{
+            //inverser si le bouton est like ou unlike
+            currentPlant.liked = !currentPlant.liked
+            // mettre à jour l'objet Plante
+            repo.updatePlante(currentPlant)
         }
 
     }

@@ -17,7 +17,7 @@ class PlantRepository {
     val plantList = arrayListOf<PlantModel>()
     }
 
-    fun updateData(){
+    fun updateData(callback: () -> Unit){
         //absorber les données depuis la databaseRef -> liste de plantes
         databaseRef.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -32,12 +32,20 @@ class PlantRepository {
                         plantList.add(plant)
                     }
                 }
+
+                // accctionner le callback
+                callback()
             }
 
             override fun onCancelled(p0: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
         })
     }
+
+    // Maj objet plante en BDD
+    fun updatePlante(plant:PlantModel) = databaseRef.child(plant.id).setValue(plant)
+
+
 
 }

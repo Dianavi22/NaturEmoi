@@ -9,13 +9,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //charger le repository
-
+        //charger le PlantRepository
         val repo = PlantRepository()
-        // injecter le fragment dans notre boîte (fragment_container)
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, HomeFragment(this))
-        transaction.addToBackStack(null)
-        transaction.commit()
+
+        //mettre à jour la liste de plante
+        repo.updateData{
+            // injecter le fragment dans notre boîte (fragment_container)
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, HomeFragment(this))
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+
     }
 }

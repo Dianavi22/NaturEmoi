@@ -13,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/trending1"/>
+        android:src="@drawable/trending1"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"/>
 
     <ImageView
         android:id="@+id/star_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_margin="@dimen/item_margin"
-        app:tint="@color/white"
-        android:src="@drawable/ic_unstar"/>
+        android:layout_margin="@dimen/item_margin"/>
 
 </androidx.cardview.widget.CardView>
