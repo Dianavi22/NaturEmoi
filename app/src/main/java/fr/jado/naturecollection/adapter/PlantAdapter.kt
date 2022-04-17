@@ -8,13 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import fr.jado.naturecollection.MainActivity
-import fr.jado.naturecollection.PlantModel
-import fr.jado.naturecollection.PlantRepository
-import fr.jado.naturecollection.R
+import fr.jado.naturecollection.*
 
 class PlantAdapter(
-    private val context: MainActivity,
+    val context: MainActivity,
     private val plantList: List<PlantModel>,
     private val layoutId: Int
     ) : RecyclerView.Adapter<PlantAdapter.ViewHolder>(){
@@ -59,6 +56,16 @@ class PlantAdapter(
             holder.starIcon.setImageResource(R.drawable.ic_unstar)
         }
 
+        for (i in plantList.indices) {
+
+            if (i == plantList.indices.last) {
+                //ajouter une margin sur la dernière plannte
+            } else {
+
+            }
+        }
+
+
         // rajouter une interaction sur étoile
         holder.starIcon.setOnClickListener{
             //inverser si le bouton est like ou unlike
@@ -67,7 +74,16 @@ class PlantAdapter(
             repo.updatePlante(currentPlant)
         }
 
+        //interraction lors du clic sur une plante
+        holder.itemView.setOnClickListener{
+            //afficher la popup
+            PlantPopup(this).show()
+        }
+
+
     }
+
+
 
     override fun getItemCount(): Int = plantList.size
 
