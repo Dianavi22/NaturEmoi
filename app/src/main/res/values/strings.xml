@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Nature Emoi</string>
 
+    <string name="bottom_home_item">Accueil</string>
+    <string name="bottom_collection_item">Collection</string>
+    <string name="bottom_add_plant_item">Ajouter</string>
+
     <!-- Page d'accueil -->
     <string name="home_page_title">A découvrir</string>
     <string name="home_page_last_plant_section">Dernières plantes</string>
@@ -14,17 +18,17 @@
     <string name="add_plante_page_name_input">@string/item_page_plante_name</string>
     <string name="add_plante_page_description_input">@string/item_page_plante_description</string>
 
-    <string name="add_plante_page_grow_spinner_input">
+    <array name="add_plante_page_grow_spinner_input">
         <item>Croissance : Lente</item>
          <item>Croissance : Moyenne</item>
          <item>Croissance : Rapide</item>
-    </string>
+    </array>
 
-    <string name="add_plante_page_watter_spinner_input">
+    <array name="add_plante_page_watter_spinner_input">
         <item>Consommation : Faible</item>
       <item>Consommation : Moyenne</item>
-        <item>Consommation : Elevee</item>
-    </string>
+        <item>Consommation : Elevée</item>
+    </array>
 
     <string name="add_plante_page_confirm_button">Confirmer</string>
 

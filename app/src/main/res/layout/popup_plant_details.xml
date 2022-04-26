@@ -17,6 +17,7 @@
 
 
         <ImageView
+            android:id="@+id/image_item"
             android:contentDescription="@null"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,18 +25,6 @@
             android:src="@drawable/trending1" />
 
     </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/textView"
-        style="@style/TitleTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="@string/popup_plant_name"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-        app:layout_constraintEnd_toStartOf="@+id/close_button"
-        app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toTopOf="@+id/cardView2" />
 
     <ImageView
         android:contentDescription="@null"
@@ -47,6 +36,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardView2"
         android:layout_marginEnd="@dimen/default_margin" />
+
+    <TextView
+        android:text="@string/popup_plant_name"
+        android:id="@+id/popup_plant_name"
+        style="@style/TitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintEnd_toStartOf="@+id/close_button"
+        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintTop_toTopOf="@+id/cardView2" />
 
     <TextView
         android:id="@+id/popup_plant_description_title"
@@ -70,7 +70,7 @@
     <TextView
         android:id="@+id/popup_plant_grow_title"
         style="@style/TitleTextStyle"
-android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/popup_plant_grow_title"
